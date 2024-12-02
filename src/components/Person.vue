@@ -1,7 +1,9 @@
 <template>
     <div class="person">
+        <!-- <h2>{{ a }}</h2> -->
         <h2>姓名： {{name}}</h2>
         <h2>年龄： {{age}}</h2>
+        <h2>地址： {{address}}</h2>
         <button @click="changeName">修改名字</button>
         <button @click="changeAge">修改年龄</button>
         <button @click="showTel">查看联系方式</button>
@@ -9,27 +11,31 @@
 </template>
 
 <script lang="ts">
-export default {
-    name: 'Person',
-    data() {
-        return {
-            name: '张三',
-            age: 18,
-            tel: '13888888888'
-        }
-    },
-    methods: {
-        changeName() {
-            this.name = 'zhang-san'
-        },
-        changeAge() {
-            this.age += 1
-        },
-        showTel() {
-            alert(this.tel)
-        }
+    export default {
+        name: 'Person',
     }
-}
+</script>
+
+<script lang="ts" setup>
+    //数据，原来是写在data中的，此时的name、age、tel都不是响应式的数据
+    let name = '张三';  //注意此时的name不是响应式的
+    let age = 18;  // 注意此时的age不是响应式的
+    let tel = '12388888888';  // 注意此时的tel不是响应式的
+    // let x = this.d;
+    let address = '北京昌平区宏福苑.宏福科技园'
+
+    // 方法
+    function changeName() {
+        name = 'zhang-san'  // 注意：这样修改name，页面是没有变化的
+        console.log(name)  // name确实改了，但name不是响应式的
+    }
+    function changeAge() {
+        age += 1  // 注意：这样修改age，页面是没有变化的
+        console.log(age)  // age确实改了，但age不是响应式的
+    }
+    function showTel() {
+        alert(tel)
+    }
 </script>
 
 <style>
