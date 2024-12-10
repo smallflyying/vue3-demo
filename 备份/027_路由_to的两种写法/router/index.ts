@@ -12,17 +12,14 @@ const router = createRouter({
     history:createWebHashHistory(),  // 路由器的工作模式
     routes:[  // 一个一个的路由规则
         {
-            name:'zhuye',
             path:'/home',
             component: Home
         },
         {
-            name:'xinwen',
             path:'/news',
             component: News
         },
         {
-            name:'guanyu',
             path:'/about',
             component: About
         }
