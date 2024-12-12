@@ -14,6 +14,7 @@
     import {useTalkStore} from '@/store/loveTalk';
 
     const talkStore = useTalkStore();
+    console.log(talkStore.talkList);
 
     // 方法
     async function getLoveTalk() {
