@@ -6,7 +6,7 @@
         <template v-slot="params">
           <ul>
             <li v-for="y in params.youxi" :key="y.id">
-              {{ y.name }}
+                {{y.name}}
             </li>
           </ul>
         </template>
@@ -16,7 +16,7 @@
         <template v-slot="params">
           <ol>
             <li v-for="item in params.youxi" :key="item.id">
-              {{ item.name }}
+                {{item.name}}
             </li>
           </ol>
         </template>
@@ -24,16 +24,17 @@
 
       <Game>
         <template #default="{youxi}">
-          <h3 v-for="g in youxi" :key="g.id">{{ g.name }}</h3>
+          <h3 v-for="item in youxi" :key="item.id">
+              {{item.name}}
+          </h3>
         </template>
       </Game>
-
     </div>
   </div>
 </template>
 
 <script setup lang="ts" name="Father">
-  import Game from './Game.vue'
+  import Game from './Game.vue';
 </script>
 
 <style scoped>
@@ -46,7 +47,7 @@
     display: flex;
     justify-content: space-evenly;
   }
-  img,video {
+  img, video {
     width: 100%;
   }
 </style>
